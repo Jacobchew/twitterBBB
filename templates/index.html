@@ -6,6 +6,9 @@
   </head>
 
   <body>
-{{data}}
+ {% for user in data %}
+  <li>{{ user['text'] }}</li>
+{% endfor %}
+
   </body>
 </html>

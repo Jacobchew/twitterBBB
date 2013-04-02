@@ -8,14 +8,11 @@ app = Flask(__name__)
 @app.route('/sexyitems')
 def things():
 	return render_template('things.html')
-dataAB =[]
 @app.route('/')
 def index():
-	list = jacobfunc.jinbanyakmain()
-	tweet = list['statuses']
-	for afeez in range(5):
-		dataAB[afeez] = tweet[afeez]['text']
-	return render_template('index.html', data=tweet, lala=dataAB)	
+	listoftweets = jacobfunc.jinbanyakmain()
+	tweet = listoftweets['statuses']
+	return render_template('index.html', data=tweet)	
 	
 if __name__ == '__main__':
 	app.debug = True
