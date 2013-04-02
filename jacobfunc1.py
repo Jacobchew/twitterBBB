@@ -27,8 +27,8 @@ bodyoauth = OAuth1(client_key, client_secret,
 
 				   
 def jinbanyakmain():
-	payload = {'count': 2}
-	url = BASE_URL + "statuses/mentions_timeline.json"
-	r = requests.get(url, auth=oauth, params=payload)
+	payload = {'status': 'Jin is fat'}
+	url = BASE_URL + "statuses/update.json"
+	r = requests.post(url, auth=oauth, data=payload)
 	return r.json() 
 
