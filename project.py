@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 	listoftweets = jacobfunc.jinbanyakmain()
-	tweets = listoftweets['statuses']
+	tweets = listoftweets
 	return render_template('index.html', data = tweets)
 
 @app.route('/biscuit/')
@@ -20,6 +20,6 @@ def things():
 if __name__ == '__main__':
 	app.debug = True
 	port = int(os.environ.get('PORT', 5000))
-	app.run(host = '0.0.0.0', port = port)
+	app.run(host = '127.0.0.1', port = port)
     
 
